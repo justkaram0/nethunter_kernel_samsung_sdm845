@@ -26,6 +26,8 @@ unexport GREP_OPTIONS
 
 # Set Platform Version for BCMHD driver
 export PLATFORM_VERSION=10
+# Set LLVM since Kernel is meant to be compiled with only CLANG
+export LLVM=1
 # We are using a recursive build, so we need to do a little thinking
 # to get the ordering right.
 #
@@ -353,7 +355,6 @@ OBJDUMP		= $(CROSS_COMPILE)objdump
 READELF		= $(CROSS_COMPILE)readelf
 OBJSIZE		= $(CROSS_COMPILE)size
 STRIP		= $(CROSS_COMPILE)strip
-LLVM		= 1
 LLVM_IAS 	:= 1
 AWK		= awk
 GENKSYMS	= scripts/genksyms/genksyms
