@@ -4877,12 +4877,12 @@ static void hub_port_connect(struct usb_hub *hub, int port1, u16 portstatus,
 	struct usb_device *udev = port_dev->child;
 	static int unreliable_port = -1;
 	enum usb_device_speed dev_speed = USB_SPEED_UNKNOWN;
+	bool retry_locked;
 #ifdef CONFIG_USB_DEBUG_DETAILED_LOG
 	dev_info(&port_dev->dev,
 		"port %d, status %04x, change %04x, %s\n",
 		port1, portstatus, portchange, portspeed(hub, portstatus));
 #endif
-	bool retry_locked;
 
 	/* Disconnect any existing devices under this port */
 	if (udev) {
