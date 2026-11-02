@@ -1077,10 +1077,10 @@ ssize_t sec_bat_show_attrs(struct device *dev,
 		break;
 	case CISD_WC_DATA_JSON:
 		{
+			int j = 0;
 			struct cisd *pcisd = &battery->cisd;
 			struct pad_data *pad_data = pcisd->pad_array;
 			char *temp_buf;;
-			int j = 0;
 
 			if (!temp_buf) {
 				i = -ENOMEM;
